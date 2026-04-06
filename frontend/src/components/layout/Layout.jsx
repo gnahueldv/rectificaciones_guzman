@@ -98,7 +98,7 @@ export default function Layout({ children }) {
           }}>⚙️</div>
           <div>
             <div style={{ fontWeight: 800, color: '#fff', fontSize: 13, letterSpacing: '0.08em' }}>RECTIFICACIONES</div>
-            <div style={{ fontWeight: 800, color: '#dc2626', fontSize: 14, letterSpacing: '0.1em' }}>GUZMAN</div>
+            <div style={{ fontWeight: 800, color: '#dc2626', fontSize: 14, letterSpacing: '0.1em' }}>GUZMÁN</div>
             <div style={{ fontSize: 10, color: '#475569', marginTop: 1 }}>La Plata · Bs.As.</div>
           </div>
         </div>
@@ -178,7 +178,7 @@ export default function Layout({ children }) {
               letterSpacing: '0.06em',
             }}
           >
-            🔧 RECTIFICACIONES GUZMAN ⚙️
+            🔧 RECTIFICACIONES GUZMÁN ⚙️
           </h1>
 
           {/* Botón nueva orden en header (solo desktop) */}

@@ -1,0 +1,191 @@
+/* ── Estilos Globales: Rectificaciones Guzmán ──────────────────────────────── */
+:root {
+  --bg-main: #0d0f12;
+  --bg-card: #1a1d21;
+  --bg-input: #090a0c;
+  --border: rgba(255, 255, 255, 0.05);
+  --text-main: #f9fafb;
+  --text-muted: #64748b;
+  --primary: #dc2626;
+  --primary-light: #ff4d4d;
+  
+  /* Semáforo Mockup */
+  --status-ingresado: #4b5563;
+  --status-en_proceso: #f59e0b;
+  --status-terminado: #10b981;
+  --status-atrasado: #ef4444;
+
+  --shadow-card: 4px 4px 10px rgba(0,0,0,0.6), -2px -2px 10px rgba(255,255,255,0.03);
+  --shadow-inner: inset 2px 2px 5px rgba(0,0,0,0.8), inset -1px -1px 4px rgba(255,255,255,0.05);
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* Clases Útiles */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* Taller High-Fidelity Styling */
+.taller-input {
+  min-height: 48px;
+  font-size: 15px !important;
+  padding: 12px 16px;
+  background: var(--bg-input);
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  color: white;
+  width: 100%;
+  box-shadow: var(--shadow-inner);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.taller-input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: var(--shadow-inner), 0 0 8px rgba(220, 38, 38, 0.2);
+}
+
+.btn-glossy-red {
+  min-height: 54px;
+  background: linear-gradient(180deg, var(--primary-light) 0%, var(--primary) 100%);
+  color: white;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 14px;
+  border: 1px solid #7f1d1d;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4), inset 0 2px 2px rgba(255,255,255,0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s, filter 0.2s;
+}
+
+.btn-glossy-red:active { transform: scale(0.97); }
+.btn-glossy-red:hover { filter: brightness(1.1); }
+
+/* FAB Glossy Sphere */
+.fab-glossy {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 68px;
+  height: 68px;
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #dc2626 70%, #7f1d1d);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset -4px -4px 10px rgba(0,0,0,0.5), inset 4px 4px 10px rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  font-weight: 300; /* Plus symbol style in mockup */
+}
+
+/* Card Neumo */
+.card-neumo {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.card-neumo:active { transform: scale(0.98); }
+
+.badge-status-pill {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.mobile-only { display: none; }
+
+@media (max-width: 768px) {
+  .desktop-only { display: none !important; }
+  .mobile-only { display: block !important; }
+}
+
+.responsive-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.glassy-item {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.glassy-item:hover {
+  background: rgba(30, 41, 59, 0.4);
+  border-color: rgba(220, 38, 38, 0.4);
+}
+
+/* Reset select/input */
+select option { background: #0f172a; color: var(--text-main); }
+input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.8); cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+
+/* Animaciones */
+@keyframes colorChange {
+  0% { color: #fff; }
+  25% { color: #ff4d4d; }
+  50% { color: #f59e0b; }
+  75% { color: #10b981; }
+  100% { color: #fff; }
+}
+
+@keyframes moveTitle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.animate-title {
+  animation: colorChange 4s infinite linear, moveTitle 3s infinite ease-in-out;
+  display: inline-block;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
